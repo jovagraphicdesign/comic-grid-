@@ -1,0 +1,110 @@
+// bower:scss
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.wrapper{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repaet(2, 1fr);
+  grid-auto-rows: 1fr;
+  max-width: 996px;
+  // font-size: 0;
+  margin: auto;
+}
+
+.hero-item,
+.standard-item{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid-item{
+  display: inline-block;
+  min-height: 400px;
+  width: 50%;
+}
+.hero-item{
+  background-color: lightgray;
+  background-image: url(../images/talk.png);
+}
+.standard-item:nth-child(2){
+  background-color: lightblue;
+}
+.standard-item:nth-child(3){
+  background-color: lime;
+}
+.standard-item:nth-child(4){
+  background-color: tomato;
+}
+.standard-item:nth-child(5){
+  background-color: gray;
+}
+.standard-item:nth-child(6){
+  background-color: cyan;
+}
+
+@supports (display: grid) {
+  .grid-item{
+    width: auto;
+    min-height: 0;
+  }
+
+  .hero-item{
+    grid-column: 1 / span 2;
+    grid-row: 1 / 30 ;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+  }
+
+  .standard-item:nth-child(2){
+    grid-column: 1 / span 1;
+    grid-row: 30 / 60;
+    clip-path: polygon(0 16%, 0 100%, 95% 91%, 100% 6%);
+    margin-top: -60px;
+  }
+
+  .standard-item:nth-child(3){
+    grid-column: 2 / span 1;
+    grid-row: 30 / 60;
+    clip-path: polygon(5% 15%, 0 92%, 100% 100%, 100% 6%);
+    margin-top: -100px;
+    margin-left: -5%;
+  }
+
+  .standard-item:nth-child(4){
+    grid-column: 1 / span 2;
+    grid-row: 60 / 90;
+    clip-path: polygon(47% 0%, 100% 10%, 100% 100%, 0 90%, 0 10%);
+    margin-top: -34px;
+  }
+
+  .standard-item:nth-child(5){
+    grid-column: 1 / span 1;
+    grid-row: 90 / 120;
+    clip-path: polygon(0 0%, 0 100%, 100% 100%, 95% 6%);
+    margin-top: -35px;
+  }
+
+  .standard-item:nth-child(6){
+    grid-column: 2 / span 1;
+    grid-row: 90 / 120;
+    clip-path: polygon(0% 0%, 5% 100%, 100% 100%, 100% 6%);
+    margin-top: -15px;
+    margin-left: -5%;
+  }
+  @media screen and (max-width: 670px ){
+
+  }
+}
